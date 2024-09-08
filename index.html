@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon-32x32.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+      <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <title>Shortly</title>
+  </head>
+  <body>
+    <!-- 네비게이션 컨테이너 -->
+    <nav class="relative container mx-auto p-6">
+      <!-- 모든 항목을 위한 플렉스 컨테이너 -->
+      <div class="flex items-center justify-between">
+        <!-- 로고/메뉴를 위한 플렉스 컨테이너 -->
+        <div class="flex items-center space-x-20">
+          <!-- 로고 -->
+          <img src="images/logo.svg" alt="로고" />
+          <!-- 왼쪽 메뉴 -->
+          <div class="hidden space-x-8 font-bold lg:flex">
+            <a href="#" class="text-grayishViolet hover:text-veryDarkViolet">기능</a>
+            <a href="#" class="text-grayishViolet hover:text-veryDarkViolet">가격</a>
+            <a href="#" class="text-grayishViolet hover:text-veryDarkViolet">자원</a>
+          </div>
+        </div>
+
+        <!-- 오른쪽 버튼 메뉴 -->
+        <div
+          class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex"
+        >
+          <div class="hover:text-veryDarkViolet">로그인</div>
+          <a
+            href="#"
+            class="px-8 py-3 font-bold text-white bg-cyan rounded-full hover:opacity-70"
+            >가입하기</a
+          >
+        </div>
+
+        <!-- 햄버거 버튼 -->
+        <button
+          id="menu-btn"
+          class="block hamburger lg:hidden focus:outline-none"
+          type="button"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+
+      <!-- 모바일 메뉴 -->
+      <div
+        id="menu"
+        class="absolute hidden p-6 rounded-lg bg-darkViolet left-6 right-6 top-20 z-100"
+      >
+        <div
+          class="flex flex-col items-center justify-center w-full
+           space-y-6 font-bold text-white rounded-sm"
+        >
+          <a href="#" class="w-full text-center">기능</a>
+          <a href="#" class="w-full text-center">가격</a>
+          <a href="#" class="w-full text-center">자원s</a>
+          <a href="#" class="w-full pt-6 border-t border-gray-400 text-center"
+            >로그인</a
+          >
+          <a href="#" class="w-full py-3 text-center rounded-full bg-cyan"
+            >가입하기</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <section id="hero">
+      <!-- 히어로 컨테이너 -->
+      <div class="container flex flex-col-reverse mx-auto p-6 lg:flex-row">
+        <!-- 내용 컨테이너 -->
+        <div class="flex flex-col space-y-10 mb-44 lg:mt-16 lg:w-1/2 xl:mb-52">
+          <h1
+            class="text-5xl font-bold text-center lg:text-6xl lg:max-w-md lg:text-left"
+          >
+            단순한 링크 이상의 것
+          </h1>
+          <p
+            class="text-2xl text-center text-gray-400 lg:max-w-md lg:text-left"
+          >
+            브랜드 인지도를 구축하고 링크의 성과를 자세히 분석하세요.
+          </p>
+          <div class="mx-auto lg:mx-0">
+            <a
+              href="#"
+              class="py-5 px-10 text-2xl font-bold text-white
+               bg-cyan rounded-full lg:py-4 hover:opacity-70"
+              >시작하기</a
+            >
+          </div>
+        </div>
+
+        <!-- 이미지 -->
+        <div class="mb-24 mx-auto md:w-180 lg:mb-0 lg:w-1/2">
+          <img src="images/illustration-working.svg" alt="작업 중" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 링크 단축 섹션 -->
+    <section id="shorten" class="relative bg-gray-100">
+      <!-- 링크 단축 컨테이너 -->
+      <div class="max-w-4xl mx-auto p-6 space-y-6">
+        <!-- 폼 -->
+        <form
+          id="link-form"
+          class="relative flex flex-col w-full p-10 -mt-20 space-y-4 bg-darkViolet rounded-lg md:flex-row md:space-y-0 md:space-x-3"
+        >
+          <input
+            type="text"
+            class="flex-1 p-3 border-2 rounded-lg placeholder-yellow-500 focus:outline-none"
+            placeholder="여기에 링크를 단축하세요"
+            id="link-input"
+          />
+
+          <button
+            class="px-10 py-3 text-white bg-cyan rounded-lg hover:bg-cyanLight focus:outline-none md:py-2"
+          >
+            단축하기!
+          </button>
+
+          <!-- 오류 메시지 -->
+          <div
+            id="err-msg"
+            class="absolute left-7 bottom-3 text-red text-sm italic"
+          ></div>
+        </form>
+
+        <!-- 링크 1 -->
+        <div
+          class="flex flex-col items-center justify-between w-full p-6 bg-white rounded-lg md:flex-row"
+        >
+          <p class="font-bold text-center text-veryDarkViolet md:text-left">
+            https://frontendmentor.io
+          </p>
+
+          <div
+            class="flex flex-col items-center justify-end flex-1 space-x-4 space-y-2 md:flex-row md:space-y-0"
+          >
+            <div class="font-bold text-cyan">https://rel.ink/k4IKyk</div>
+            <button
+              class="p-2 px-8 text-white bg-cyan rounded-lg hover:opacity-70 focus:outline-none"
+            >
+              복사
+            </button>
+          </div>
+        </div>
+
+        <!-- 링크 2 -->
+        <div
+          class="flex flex-col items-center justify-between w-full p-6 bg-white rounded-lg md:flex-row"
+        >
+          <p class="font-bold text-center text-veryDarkViolet md:text-left">
+            https://twitter.com/frontendmentor
+          </p>
+
+          <div
+            class="flex flex-col items-center justify-end flex-1 space-x-4 space-y-2 md:flex-row md:space-y-0"
+          >
+            <div class="font-bold text-cyan">https://rel.ink/gxOXp9</div>
+            <button
+              class="p-2 px-8 text-white bg-darkViolet rounded-lg hover:opacity-70 focus:outline-none"
+            >
+              복사
+            </button>
+          </div>
+        </div>
+
+        <!-- 링크 3 -->
+        <div
+          class="flex flex-col items-center justify-between w-full p-6 bg-white rounded-lg md:flex-row"
+        >
+          <p class="font-bold text-center text-veryDarkViolet md:text-left">
+            https://linkedin.com/frontend-mentor
+          </p>
+
+          <div
+            class="flex flex-col items-center justify-end flex-1 space-x-4 space-y-2 md:flex-row md:space-y-0"
+          >
+            <div class="font-bold text-cyan">https://rel.ink/gob3X9</div>
+            <button
+              class="p-2 px-8 text-white bg-cyan rounded-lg hover:opacity-70 focus:outline-none"
+            >
+              복사
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 통계 섹션 -->
+    <section id="stats" class="py-24 bg-gray-100">
+      <div class="container mx-auto px-3">
+        <h2 class="text-4xl mb-6 font-bold text-center">고급 통계</h2>
+        <p class="max-w-xs mx-auto text-center text-gray-400 md:max-w-md">
+          고급 통계 대시보드를 통해 웹에서 링크의 성과를 추적하세요.
+        </p>
+      </div>
+    </section>
+
+    <!-- 기능 박스 섹션 -->
+    <section id="features" class="pb-32 bg-gray-100">
+      <div
+        class="relative container flex flex-col items-center px-6 mx-auto space-y-32 lg:flex-row lg:space-y-0 lg:space-x-12"
+      >
+        <!-- 박스 1 -->
+        <div class="flex flex-col items-center max-w-xs mx-auto text-center space-y-6 lg:text-left lg:items-start lg:max-w-md">
+          <img src="images/icon-brand-recognition.svg" alt="브랜드 인식 아이콘" />
+          <h3 class="text-2xl font-bold text-veryDarkViolet">브랜드 인식</h3>
+          <p class="text-gray-400">
+            모든 단축 링크를 브랜드화하여 신뢰를 얻고 브랜드 인식을 높이세요.
+          </p>
+        </div>
+
+        <!-- 박스 2 -->
+        <div class="flex flex-col items-center max-w-xs mx-auto text-center space-y-6 lg:text-left lg:items-start lg:max-w-md">
+          <img src="images/icon-detailed-records.svg" alt="상세 기록 아이콘" />
+          <h3 class="text-2xl font-bold text-veryDarkViolet">상세 기록</h3>
+          <p class="text-gray-400">
+            단축 링크의 실적을 상세히 분석하여 링크의 성과를 추적하세요.
+          </p>
+        </div>
+
+        <!-- 박스 3 -->
+        <div class="flex flex-col items-center max-w-xs mx-auto text-center space-y-6 lg:text-left lg:items-start lg:max-w-md">
+          <img src="images/icon-fully-customizable.svg" alt="완전 맞춤화 아이콘" />
+          <h3 class="text-2xl font-bold text-veryDarkViolet">완전 맞춤화</h3>
+          <p class="text-gray-400">
+            사용자 정의 도메인과 맞춤형 단축 링크로 브랜드 일관성을 유지하세요.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section id="cta" class="relative py-16 bg-cyan">
+      <div
+        class="relative container flex flex-col items-center px-6 mx-auto space-y-10 text-center lg:flex-row lg:space-y-0 lg:justify-between lg:text-left"
+      >
+        <div class="space-y-6 lg:max-w-sm">
+          <h2 class="text-4xl font-bold text-white">모두의 링크 단축</h2>
+          <p class="text-white">
+            더 많은 링크를 단축하고 링크의 성과를 분석하여 비즈니스를 성장시키세요.
+          </p>
+        </div>
+
+        <a
+          href="#"
+          class="block px-12 py-4 text-white bg-darkViolet rounded-full hover:opacity-70"
+        >
+          시작하기
+        </a>
+      </div>
+    </section>
+
+    <!-- 푸터 섹션 -->
+    <footer class="bg-darkViolet">
+      <div class="container flex flex-col items-center justify-between px-6 py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+        <div class="flex items-center justify-center space-x-12">
+          <img src="images/logo.svg" alt="로고" />
+          <div class="hidden space-x-8 text-white lg:flex">
+            <a href="#" class="hover:text-cyan">기능</a>
+            <a href="#" class="hover:text-cyan">가격</a>
+            <a href="#" class="hover:text-cyan">자원</a>
+          </div>
+        </div>
+
+        <div class="flex justify-center space-x-6">
+          <a href="#" class="text-white hover:text-cyan">
+            <img src="images/icon-facebook.svg" alt="Facebook" />
+          </a>
+          <a href="#" class="text-white hover:text-cyan">
+            <img src="images/icon-twitter.svg" alt="Twitter" />
+          </a>
+          <a href="#" class="text-white hover:text-cyan">
+            <img src="images/icon-pinterest.svg" alt="Pinterest" />
+          </a>
+          <a href="#" class="text-white hover:text-cyan">
+            <img src="images/icon-instagram.svg" alt="Instagram" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
