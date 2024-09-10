@@ -49,6 +49,16 @@
             >
           </div>
   
+                  <!-- 햄버거 버튼 -->
+        <button
+        id="menu-btn"
+        class="block hamburger lg:hidden focus:outline-none"
+        type="button"
+      >
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
 
           <!-- 햄버그 버튼 -->        
         </div>
@@ -89,38 +99,62 @@
       <section id="shorten" class="relative bg-gray-100">
         <div class="max-w-4xl mx-auto p-6 space-y-6">
           
-          <form action="" id="link-fom" 
-          class="relative flex flex-col w-full p-10 -mt-20 space-y-4 bg-darkViolet rounded-lg md:flex-row
+          <form  
+          id="link-form" 
+          class="relative flex flex-col w-full p-10 -mt-20 space-y-4
+           bg-darkViolet rounded-lg md:flex-row
             md:space-y-0 md:space-x-3
           ">
 
-            <input type="text" class="flex-1 p-3 border-2 rounded-lg placeholder-yellow-500
+            <input type="text" 
+            
+            id="link-input"
+            class="flex-1 p-3 border-2 rounded-lg placeholder-yellow-500
               focus:outline-none"
               placeholder="여기에 링크주소를 입력하세요"
               >
 
-            <button class="px-10 py-3 text-white bg-cyan rounded-lg hover:bg-cyanLight
+            <button 
+              type="submit" class="px-10 py-3 text-white bg-cyan rounded-lg hover:bg-cyanLight
               focus:outline-none md:py-2">
               단축하기
             </button>
+
+            <!-- 오류 메시지 -->
+              <div
+              id="err-msg"
+              class="absolute left-7 bottom-3 text-red text-sm italic"
+            ></div>
           </form>
 
-          <div class="flex flex-col itmes-center justify-between w-full p-6">            
-            <p class="font-bold text-center text-veryDarkViolet md:text-left">
-              https://frontendmentor.io
-            </p>
 
-            <div class="flex flex-col items-center justify-end flex-1 space-x-4 space-y-2
-              md:flex-row md:space-y-0
-            ">
-            <div class="font-bold text-cyan">
-              https://rel.ink/gxOXp9
-            </div>
-            <button class="p-2 px-8 text-white bg-cyan rounded-lg hover:opacity-70 focus:outline-none">
-              복사
-            </button>
-            </div>
-          </div>
+
+                  <!-- 링크 2 -->
+                  <div
+                  class="flex flex-col items-center justify-between w-full p-6 bg-white rounded-lg md:flex-row"
+                >
+                  <p class="font-bold text-center text-veryDarkViolet md:text-left">
+                    https://twitter.com/frontendmentor
+                  </p>
+          
+                  <div
+                    class="flex flex-col items-center justify-end flex-1 space-x-4 space-y-2 md:flex-row md:space-y-0"
+                  >
+                    <div class="font-bold text-cyan">https://rel.ink/gxOXp9</div>
+                    <button
+                      class="p-2 px-8 text-white bg-darkViolet rounded-lg hover:opacity-70 focus:outline-none"
+                    >
+                      복사
+                    </button>
+                  </div>
+                </div>
+     
+
+
+
+
+
+
 
                   <!-- 링크 2 -->
         <div
@@ -166,5 +200,129 @@
         </div>
       </section>
 
+
+    <section
+      id="stats"
+      class="py-24 bg-gray-100"
+    >
+      <div class="container mx-auto px-3 text-center">
+          <h2 class="text-4xl font-bold text-center mb-6">고급 통계</h2>
+          <p class="text-gray-400 
+            text-center max-w-xs
+            mx-auto
+            md:max-w-md
+          ">
+            고급 통계 대시보드를 통해 웹에서 링크의 성과를 추적하세요.
+          </p>
+      </div>
+
+  </section>
+
+
+  <section id="features" class="pb-32 bg-gray-100">
+
+    <div class="relative container flex flex-col 
+          items-start px-6 mx-auto md:flex-row md:space-x">
+        
+        <div class="hidden absolute
+          w-10/12 top-24 left-16 h-3 bg-cyan md:block
+        "></div>
+
+        <div class="absolute w-2 left-1/2 h-full bg-cyan md:hidden"></div>
+          
+        
+        <!-- box1 -->
+      <div class="relative flex flex-col p-6 space-y-6 
+        bg-white rounded-lg
+        mt-9
+        md:w-1/4
+        md:mx-10
+      ">
+          <div class="absolute -ml-10 left-1/2 -top-10 md:left-16"> 
+            <div class="flex items-center justify-center w-20 h-20 rounded-full
+              bg-veryDarkViolet
+            ">
+              <img src="images/icon-brand-recognition.svg" alt="브랜드 인식 아이콘" />
+            </div>        
+          </div> 
+       
+          <h5 class="pt-6 text-xl font-bold
+            text-center capitalize md:text-left
+          ">브랜드 인식</h5>                  
+          <p class="text-center text-gray-400 md:text-left">
+            모든 단축 링크를 브랜드화하여 신뢰를 얻고 브랜드 인식을 높이세요.
+        </p>
+      </div>
+
+
+
+
+        <!-- box2 -->
+        <div class="
+         relative flex flex-col 
+         p-6 space-y-6
+         bg-white rounded-lg
+         mt-24  
+         md:mt-8
+         md:w-1/4
+         md:mx-10
+        ">
+
+          <div class="absolute -ml-8 left-1/2 -top-10 md:left-16"> 
+            <div class="flex items-center justify-center w-20 h-20 rounded-full
+              bg-veryDarkViolet
+            ">
+              <img src="images/icon-detailed-records.svg" alt="브랜드 인식 아이콘" />
+            </div>        
+          </div> 
+       
+          <h5 class="pt-6 text-xl font-bold
+            text-center capitalize md:text-left
+          ">상세 기록</h5>                  
+          <p class="text-center text-gray-400 md:text-left">
+            단축 링크의 실적을 상세히 분석하여 링크의 성과를 추적하세요.
+        </p>
+      </div>
+
+
+
+        <!-- box3 -->
+        <div class="
+         relative flex flex-col 
+         mt-24  
+         p-6 space-y-6
+         bg-white rounded-lg
+                  
+         md:mt-8
+         md:w-1/4
+         md:mx-10
+         md:-right-3
+        ">        
+          <div class="absolute -ml-8 left-1/2 -top-10 md:left-16"> 
+            <div class="flex items-center justify-center w-20 h-20 rounded-full
+              bg-veryDarkViolet">
+              <img src="images/icon-fully-customizable.svg" alt="브랜드 인식 아이콘" />
+            </div>        
+          </div>        
+          <h5 class="pt-6 text-xl font-bold
+            text-center capitalize md:text-left
+          ">완전 맞춤화</h5>                  
+          <p class="text-center text-gray-400 md:text-left">
+            사용자 정의 도메인과 맞춤형 단축 링크로 브랜드 일관성을 유지하세요.
+        </p>
+      </div>
+
+
+
+
+     
+
+    </div>
+  </section>
+
+
+
+
+      
   </body>
 </html>
